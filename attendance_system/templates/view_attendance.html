@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Attendance</title>
+</head>
+<body>
+    <h1>Attendance Log</h1>
+    <iframe src="{{ url_for('static', filename='attendance_log.html') }}" width="100%" height="400px"></iframe><br>
+    <a href="{{ url_for('home') }}">Back to Home</a>
+</body>
+</html>

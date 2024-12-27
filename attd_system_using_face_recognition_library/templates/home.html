@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Attendance System</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #1a73e8;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        ul li a {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #1a73e8;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        ul li a:hover {
+            background-color: #1558b3;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            ul li a {
+                font-size: 1rem;
+                padding: 12px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Welcome to the Smart Attendance System</h1>
+        <ul>
+            <li><a href="{{ url_for('add_student') }}">Add New Student</a></li>
+            <li><a href="{{ url_for('take_attendance') }}">Take Attendance</a></li>
+            <li><a href="{{ url_for('view_attendance') }}">View Attendance</a></li>
+            <li><a href="{{ url_for('view_students') }}">View Registered Students</a></li>
+        </ul>
+    </div>
+</body>
+</html>

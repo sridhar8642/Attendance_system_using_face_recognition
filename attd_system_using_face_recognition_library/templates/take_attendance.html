@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take Attendance</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        img {
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            font-size: 16px;
+            color: #28a745;
+            background-color: #f1f8f4;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Take Attendance</h1>
+
+    <!-- Webcam feed -->
+    <div>
+        <img src="{{ url_for('video_feed') }}" alt="Webcam feed" width="640" height="480">
+    </div>
+
+    <!-- Take attendance button -->
+    <form method="POST">
+        <button type="submit">Take Attendance</button>
+    </form>
+
+    <!-- Feedback messages -->
+    {% if feedback %}
+    <ul>
+        {% for message in feedback %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <!-- Go back to home page -->
+    <a href="{{ url_for('home') }}">Go back to Home</a>
+</body>
+
+</html>
